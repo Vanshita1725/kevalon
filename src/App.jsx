@@ -1,4 +1,10 @@
 import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
 
 const adjectives = [
   'bright',
@@ -37,25 +43,66 @@ function generateFolderName() {
   return `${adjective}-${noun}-${suffix}`;
 }
 
+function Home({ folderName, refreshName }) {
+  return (
+    <section>
+      <h1>Home Page</h1>
+      <p>Welcome to the homepage.</p>
+      <p>
+        Your generated folder name is: <strong>{folderName}</strong>
+      </p>
+      <button onClick={refreshName}>Generate new folder name</button>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section>
+      <h1>About Page</h1>
+      <p>This page shows information about the app.</p>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section>
+      <h1>Contact Page</h1>
+      <p>Get in touch with us using this example route.</p>
+    </section>
+  );
+}
+
 function App() {
   const [folderName, setFolderName] = useState(generateFolderName());
 
+  const refreshName = () => setFolderName(generateFolderName());
+
   return (
-    <main className="app-shell">
-      <div className="card">
-        <h1>RegnRate Static Site</h1>
-        <p>React static frontend for generating a folder-style name.</p>
+    <Router>
+      <div className="app-shell">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
 
-        <div className="folder-box">
-          <span className="folder-label">Current folder name</span>
-          <strong>{folderName}</strong>
-        </div>
-
-        <button onClick={() => setFolderName(generateFolderName())}>
-          Regenerate folder name
-        </button>
+        <Routes>
+          <Route path="/" element={<Home folderName={folderName} refreshName={refreshName} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
-    </main>
+    </Router>
   );
 }
 
