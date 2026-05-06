@@ -1,0 +1,23 @@
+/* Wave Animation Keyframes */
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Classes for Waves */
+.animate-wave-slow {
+    animation: waveMove 15s linear infinite;
+}
+
+.animate-wave-fast {
+    animation: waveMove 8s linear infinite reverse;
+}
+
+/* Ensure the container is always at the bottom */
+.leading-\[0\] {
+    line-height: 0;
+}
