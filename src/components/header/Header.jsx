@@ -1,13 +1,19 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-const navLinks = ["Home", "About", "Services", "Portfolio", "Contact"];
+const navLinks = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact", to: "/contact" },
+];
 
 export default function Header() {
-  const [active, setActive] = useState("About");
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full flex  justify-center mt-20 font-[Nunito_Sans]">
+    <div className="w-full flex mt-10 justify-center mt-20 font-[Nunito_Sans]">
       <div
         className="
           relative w-[95%] max-w-[1200px]
@@ -40,24 +46,25 @@ export default function Header() {
           "
         >
           {navLinks.map((link) => (
-            <span
-              key={link}
-              onClick={() => setActive(link)}
-              className={`
-                inline-block relative cursor-pointer whitespace-nowrap
+            <NavLink
+              key={link.label}
+              to={link.to}
+              end={link.to === "/"}
+              className={({ isActive }) => `
+                text-decoration-none relative cursor-pointer whitespace-nowrap
                 text-[clamp(14px,1.4vw,16px)]
                 font-semibold tracking-[0.1px]
                 pb-[5px]
                 transition-colors duration-200
                 ${
-                  active === link
+                  isActive
                     ? "text-[#0d3d5a] border-b-2 border-[#0d3d5a]"
                     : "text-[#4b5563] border-b-2 border-transparent hover:border-[#0d3d5a]"
                 }
               `}
             >
-              {link}
-            </span>
+              {link.label}
+            </NavLink>
           ))}
         </nav>
 
@@ -130,27 +137,26 @@ export default function Header() {
             "
           >
             {navLinks.map((link) => (
-              <span
-                key={link}
-                onClick={() => {
-                  setActive(link);
-                  setMenuOpen(false);
-                }}
-                className={`
+              <NavLink
+                key={link.label}
+                to={link.to}
+                end={link.to === "/"}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => `
                   text-[15px]
                   px-3 py-[9px]
                   rounded-[10px]
                   cursor-pointer
                   transition-all duration-200
                   ${
-                    active === link
+                    isActive
                       ? "bg-[rgba(13,61,90,0.07)] text-[#0d3d5a]"
                       : "text-[#0d3d5a] hover:bg-[rgba(13,61,90,0.07)]"
                   }
                 `}
               >
-                {link}
-              </span>
+                {link.label}
+              </NavLink>
             ))}
           </div>
         )}
