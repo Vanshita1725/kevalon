@@ -1,0 +1,124 @@
+.services-section {
+  background-color: #fbfdfe;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+.services-title {
+  color: #245d71;
+  font-size: 2.8rem;
+  letter-spacing: -0.5px;
+}
+
+.services-subtitle {
+  color: #333333;
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.services-cards-wrapper {
+  position: relative;
+  margin-top: 4rem;
+}
+
+/* Horizontal line behind cards */
+.horizontal-line {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e5ecee;
+  z-index: 0;
+}
+
+.service-card {
+  background: linear-gradient(180deg, #4b8091 0%, #305463 100%);
+  border-radius: 50px 0 50px 0;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+  width: 75px;
+  height: 75px;
+  background-color: #d8d8d8;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-title {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+.service-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #d1e2e8 !important;
+  min-height: 40px;
+}
+
+.service-divider {
+  width: 90%;
+  border-color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+.service-tags {
+  margin-top: 0.5rem;
+}
+
+.service-tag {
+  font-size: 0.7rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.service-tag:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.carousel-dots .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #b5c4c9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+  background-color: #8a9da3;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .horizontal-line {
+    display: none; 
+  }
+  .services-title {
+    font-size: 2.2rem;
+  }
+}

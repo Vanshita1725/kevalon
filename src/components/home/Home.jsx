@@ -1,18 +1,22 @@
 import React from "react";
 import Header from "../header/Header";
-
+import Services from "../Services";
+import WhyChooseUs from "../WhyChooseUs";
+import Portfolio from "../Portfolio";
+import Team from "../Team";
+import Testimonials from "../Testimonials";
+import Contact from "../Contact";
+import Footer from "../Footer";
 import "./Home.css";
+
 
 const Home = () => {
 
   return (
 
     <div className="bg-white  font-sans">
-
       <Header />
-
       {/* HERO SECTION */}
-
       <section className="relative overflow-hidden  from-slate-50 via-slate-100 to-[#1f5f73] pt-40  text-center">
         {/* DECORATIVE GRADIENT CIRCLE - Top Left */}
         <div
@@ -51,60 +55,69 @@ const Home = () => {
           </div>
 
           <div className="relative  max-w-4xl  mx-auto pt-12">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
+           <div className="hero-content text-center mt-5 pt-5">
+          <h1 className="hero-title fw-bolder mb-2 text-dark">
+            Engineering digital products
+          </h1>
+          <h2 className="hero-subtitle fw-bold mb-4">
+            that scale businesses globally
+          </h2>
+          
+          <h5 className="hero-tagline fw-bold text-white mb-3 mt-5">
+            Don't Learn Tools. How To Build Features.
+          </h5>
+          
+          <p className="hero-text text-white mx-auto mb-4">
+            Kevalon Technology delivers enterprise-grade software solutions<br/>
+            Web Apps, Mobile Apps (Android, iOS, Flutter), Custom Platforms, API Integrations, and SEO-driven digital growth systems.
+          </p>
 
-              Engineering digital products
-
-            </h1>
-
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 drop-shadow-lg">
-
-              that scale businesses globally
-
-            </h2>
-
-            <p className="text-white text-lg mb-2 drop-shadow-md">
-
-              Don't Learn Tools. How To Build Features.
-
-            </p>
-
-            <p className="text-white/90 text-base mb-6 drop-shadow-md">
-
-              Kevalon Technology delivers enterprise-grade software solutions<br />
-
-              Web Apps, Mobile Apps (Android, iOS, Flutter), Custom Platforms, API Integrations, and SEO-driven digital growth systems.
-
-            </p>
-
-            {/* GLASSMORPHISM BUTTONS */}
-
-            <div className="flex justify-center gap-5 mb-12 flex-wrap">
-
-              <button className="px-10 py-4 rounded-full bg-[#1a3d46] text-white font-bold shadow-2xl hover:scale-105 transition-all border border-white/10">
-
-                Start Your Project →
-
-              </button>
-
-              <button className="px-10 py-4 rounded-full border-2 border-white/40 text-white font-bold backdrop-blur-md hover:bg-white/10 transition-all">
-
-                Explore Services 🚀
-
-              </button>
-
-            </div>
+          <div className="flex justify-center gap-3 mt-4">
+            <button className="btn-primary-custom rounded-pill px-4 py-2 font-semibold flex items-center gap-2">
+              Start Your Project <i className="bi bi-arrow-right"></i>
+            </button>
+            <button className="btn-outline-custom rounded-pill px-4 py-2 font-semibold flex items-center gap-2">
+              Explore Services <i className="bi bi-rocket"></i>
+            </button>
           </div>
-
-
-         
-
-
         </div>
 
-      </section>
-
+        {/* Stats Section */}
+        <div className="stats-container grid gap-4 justify-center mt-5 pt-4 sm:grid-cols-1 md:grid-cols-3">
+          <div className="stat-card text-center h-full p-3 bg-transparent text-white border border-white/50 shadow-sm rounded-4">
+            <div className="flex flex-col justify-center">
+              <h3 className="font-bold mb-1">100 +</h3>
+              <p className="mb-0 text-sm text-light">Projects Delivered</p>
+            </div>
+          </div>
+          <div className="stat-card text-center h-full p-3 bg-transparent text-white border border-white/50 shadow-sm rounded-4">
+            <div className="flex flex-col justify-center">
+              <h3 className="font-bold mb-1">50 +</h3>
+              <p className="mb-0 text-sm text-light">Global Clients</p>
+            </div>
+          </div>
+          <div className="stat-card text-center h-full p-3 bg-transparent text-white border border-white/50 shadow-sm rounded-4">
+            <div className="flex flex-col justify-center">
+              <h3 className="font-bold mb-1">95%</h3>
+              <p className="mb-0 text-sm text-light">Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+
+<Services />
+      <WhyChooseUs />
+      <Portfolio />
+      <Team />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </div>
+
+     
 
   );
 
