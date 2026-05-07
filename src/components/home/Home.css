@@ -8,13 +8,48 @@
     }
 }
 
+/* Pop-up Animation */
+@keyframes popUp {
+    0% {
+        transform: scale(0) translate(-50%, -50%);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Up-Down Floating Animation */
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 /* Classes for Waves */
 .animate-wave-slow {
-    animation: waveMove 15s linear infinite;
+    animation: waveMove 20s linear infinite;
 }
 
 .animate-wave-fast {
-    animation: waveMove 8s linear infinite reverse;
+    animation: waveMove 14s linear infinite reverse;
+}
+
+/* Pop-up Shape */
+.animate-pop-up {
+    animation: popUp 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Floating Up-Down Shape */
+.animate-float-up-down {
+    animation: floatUpDown 8s ease-in-out infinite;
 }
 
 /* Ensure the container is always at the bottom */
