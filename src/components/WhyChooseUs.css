@@ -1,6 +1,7 @@
 .why-choose-section {
-  background: linear-gradient(180deg, #d8f1f5 0%, #caeaee 100%);
+  background: linear-gradient(135deg, rgba(1, 72, 103, 0.2) 0%, rgba(0, 207, 255, 0.2) 100%);
   overflow: hidden;
+  box-shadow: 0px 18.5px 40.6px 0px #03466512 inset;
   padding-top: 6rem;
   padding-bottom: 6rem;
   font-family: 'Inter', sans-serif;
@@ -15,11 +16,14 @@
 }
 
 .circle-1 {
-  top: -10%;
-  left: -5%;
-  width: 500px;
-  height: 500px;
-  background-color: rgba(255, 255, 255, 0.7);
+  width: 215.46963500976562;
+  height: 215.40699768066406;
+  top: 18.67px;
+  left: 20.11px;
+  angle: 0 deg;
+  opacity: 1;
+  z-index: 10;
+  background: linear-gradient(135deg, #014867 39.42%, #ffffff43 100%);
 }
 
 .circle-2 {
@@ -39,10 +43,33 @@
 }
 
 .badge-custom {
-  background-color: rgba(255, 255, 255, 0.7) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  position: relative;
+  background: linear-gradient(135deg,
+      rgba(1, 72, 103, 0.02) 0%,
+      rgba(1, 52, 64, 0) 100%);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 21.5px;
+  overflow: hidden;
+  box-shadow: inset 0px 18.5px 40.6px -3.5px #ffffff71,
+               0px 4px 17.3px 0px #ffffff80;
+}
+
+/* Gradient Border */
+.badge-custom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 21.5px;
+  background: linear-gradient(135deg,
+      rgba(1, 72, 103, 0.5) 0%,
+      rgba(0, 207, 255, 0.5) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .dot-indicator {
@@ -54,54 +81,96 @@
 }
 
 .badge-text {
-  font-size: 0.85rem;
-  letter-spacing: 0.3px;
-  color: #174254 !important;
+font-family: Poppins;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 18px;
+line-height: 24px;
+letter-spacing: 0.3px;
+color: #014964;
 }
 
 .why-title {
-  color: #1b5e75;
-  font-size: 2.8rem;
-  letter-spacing: -0.5px;
+ background: linear-gradient(138.27deg, #61BBC5 -5.81%, #034665 80.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Inter;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 50px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
 }
 
 .why-subtitle {
-  font-size: 1.05rem;
-  color: #222222 !important;
+font-family: Poppins;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+text-align: center;
+ color: #000000;
 }
 
 /* Main Box */
 .main-content-box {
-  background: rgba(246, 252, 253, 0.9);
+  background: rgba(246, 252, 253, 62%);
   border-radius: 30px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  max-width: 1050px;
+  max-width: 1200PX;
   margin-top: 3rem;
 }
 
 .box-title {
-  color: #206279;
-  font-size: 2.2rem;
-  letter-spacing: -0.5px;
+ background: linear-gradient(138.27deg, #61BBC5 -5.81%, #034665 80.67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+font-family: Inter;
+font-weight: 600;
+font-size: 40px;
 }
 
 .box-desc {
-  color: #333333;
-  font-size: 1rem;
-  line-height: 1.7;
+ font-family: Poppins;
+font-weight: 400;
+font-style: normal;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 4%;
+padding-right: 13%;
+}
+.status-numbers {
+font-family: Inter;
+font-weight: 700;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+color: #ffffff;
 }
 
 .stats-heading {
-  color: #367285;
-  font-size: 1.1rem;
+font-family: Poppins;
+font-weight: 600;
+font-size: 20px;
+letter-spacing: 0.3px;
+color: #345B69;
+}
+.stats-heading::after{
+  content: "";
+  display: block;
+  width: 130px;
+  height: 1px;
+  background: linear-gradient(138.27deg, #61BBC5 -5.81%, #034665 63.88%);
+  margin-top: 8px;
 }
 
 /* Stat Cards */
 .stat-item {
-  background: linear-gradient(135deg, #45788c 0%, #295364 100%);
-  color: #ffffff;
+ background: radial-gradient(75% 75% at 79.67% 20.5%, rgba(27, 101, 126, 0.8) 32.25%, rgba(1, 51, 67, 0.8) 84.7%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+color: #ffffff;
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -120,28 +189,47 @@
 }
 
 .stat-title {
-  font-size: 0.9rem;
-  letter-spacing: 0.2px;
+  font-family: Inter;
+font-weight: 700;
+font-style: Bold;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #ffffff;
 }
 
 .stat-desc {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+font-family: Inter;
+font-weight: 600;
+font-style: normal;
+font-size: 14px;
+line-height: 100%;
+letter-spacing: 0%;
+color: #ffffff;
+
 }
 
 .box-footer-text p {
-  color: #555555;
-  font-size: 0.95rem;
-  line-height: 1.6;
+font-family: Poppins;
+font-weight: 400;
+font-style: normal;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+max-width: 815px;
+ 
 }
 
 @media (max-width: 768px) {
   .why-title {
     font-size: 2.2rem;
   }
+
   .main-content-box {
     border-radius: 20px;
   }
+
   .box-title {
     font-size: 1.8rem;
   }

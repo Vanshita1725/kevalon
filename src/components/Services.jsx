@@ -1,5 +1,12 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+// Swiper Imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+// Swiper Styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import './Services.css';
 
 const Services = () => {
@@ -23,7 +30,7 @@ const Services = () => {
       title: 'E-Commerce Development',
       desc: 'Secure and scalable e-commerce solutions to grow your online business.',
       tags: ['Shopify', 'Custom Dashboards', 'Checkout', 'WooCommerce']
-    }
+    },
   ];
 
   return (
@@ -32,40 +39,48 @@ const Services = () => {
         <div className="text-center mb-5">
           <h2 className="services-title fw-bold">Our Core IT Services in Ahmedabad</h2>
           <p className="services-subtitle mx-auto mt-3">
-            We provide secure, scalable, and high-performance IT solutions customized<br/>
+            We provide secure, scalable, and high-performance IT solutions customized<br />
             for your business needs.
           </p>
         </div>
 
         <div className="services-cards-wrapper">
           <div className="horizontal-line"></div>
-          <Row className="g-4 position-relative z-index-1">
+
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={3}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true, el: '.custom-pagination' }}
+            className="services-swiper"
+          >
             {services.map((service, idx) => (
-              <Col lg={3} md={6} sm={12} key={idx}>
+              <SwiperSlide key={idx} style={{ height: 'auto' }}>
                 <div className="service-card text-center p-4">
                   <div className="icon-circle mx-auto mb-4"></div>
                   <h5 className="service-card-title text-white fw-semibold mb-3">{service.title}</h5>
                   <p className="service-card-desc mb-4">{service.desc}</p>
                   <hr className="service-divider mx-auto mb-4" />
-                  <div className="service-tags d-flex flex-wrap justify-content-center gap-2">
-                    {service.tags.map((tag, i) => (
-                      <span key={i} className="service-tag">{tag}</span>
-                    ))}
-                  </div>
+                  <div className="service-tags d-flex flex-wrap gap-2">
+  {service.tags.map((tag, i) => (
+    <button key={i} className="service-tag">
+      {tag}
+    </button>
+  ))}
+</div>
                 </div>
-              </Col>
+              </SwiperSlide>
             ))}
-          </Row>
-        </div>
-    
-        <div className="carousel-dots d-flex justify-content-center mt-5 gap-2">
-          {[...Array(8)].map((_, i) => (
-            <span key={i} className={`dot ${i === 0 ? 'active' : ''}`}></span>
-          ))}
+          </Swiper>
+
+          {/* Custom Pagination Dots */}
+          <div className="custom-pagination d-flex justify-content-center mt-5 gap-2"></div>
         </div>
       </Container>
     </section>
   );
 };
 
-export default Services;
+export default Services;  

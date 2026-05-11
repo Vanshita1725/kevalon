@@ -13,7 +13,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="w-full flex mt-10 justify-center mt-20 font-[Nunito_Sans]">
+    <div className="w-full flex mt-[20px] 
+    
+    justify-center mt-20 font-[Nunito_Sans]">
       <div
         className="
           relative w-[95%] max-w-[1200px]
@@ -71,24 +73,8 @@ export default function Header() {
         {/* Right Side */}
         <div className="flex items-center gap-3">
           {/* Button */}
-          <button
-            className="
-              shrink-0 whitespace-nowrap
-              rounded-full border-none
-              px-[clamp(18px,2.2vw,28px)]
-              py-[clamp(9px,1.2vw,11px)]
-              text-[clamp(13.5px,1.4vw,15px)]
-              font-bold tracking-[0.1px]
-              text-white
-              bg-[linear-gradient(137.68deg,#61BBC5_0.13%,#034665_100%)]
-              shadow-[0_3px_14px_rgba(10,100,120,0.45),0_1px_3px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.15)]
-              transition-all duration-200
-              hover:-translate-y-[2px]
-              hover:scale-[1.03]
-              hover:shadow-[0_6px_22px_rgba(10,100,120,0.58),0_2px_6px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.2)]
-              active:scale-[0.97]
-            "
-          >
+          <button className="btn-primary-custom rounded-pill px-4 py-2 font-semibold flex items-center gap-2">
+                 
             Get Started
           </button>
 
