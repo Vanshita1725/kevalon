@@ -31,6 +31,44 @@
   color: #333333 !important;
 }
 
+.team-slider-wrapper {
+  position: relative;
+}
+
+.team-swiper {
+  padding-bottom: 1rem;
+}
+
+.team-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.team-member-slide {
+  height: 100%;
+}
+
+.team-member {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.team-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #b5c4c9;
+  opacity: 1;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.team-pagination .swiper-pagination-bullet-active {
+  background-color: #245d71;
+  transform: scale(1.3);
+}
+
 /* Team Member styling */
 .member-image-wrapper {
   width: 200px;
@@ -65,7 +103,7 @@
 
 /* Alternating vertical offset for grid */
 @media (min-width: 992px) {
-  .team-member-col:nth-child(even) {
+  .team-member-slide:nth-child(2n) {
     transform: translateY(45px);
   }
 }

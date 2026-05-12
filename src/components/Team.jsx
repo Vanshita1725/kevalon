@@ -1,5 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import './Team.css';
 
 // Using local images from the folder
@@ -29,6 +33,16 @@ const Team = () => {
       name: 'Hetvi Pandya',
       role: 'MERN Stack Developer',
       image: Member4
+    },
+    {
+      name: 'Hetvi Pandya',
+      role: 'MERN Stack Developer',
+      image: Member4
+    },
+    {
+      name: 'Hetvi Pandya',
+      role: 'MERN Stack Developer',
+      image: Member4
     }
   ];
 
@@ -45,19 +59,35 @@ const Team = () => {
           </p>
         </div>
 
-        <Row className="g-4 justify-content-center">
-          {teamMembers.map((member, idx) => (
-            <Col lg={3} md={6} sm={12} key={idx} className="text-center team-member-col">
-              <div className="team-member">
-                <div className="member-image-wrapper mx-auto mb-4">
-                  <img src={member.image} alt={member.name} className="member-image shadow-sm" />
+        <div className="team-slider-wrapper">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={4}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true, el: '.team-pagination' }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              992: { slidesPerView: 3 }
+            }}
+            className="team-swiper"
+          >
+            {teamMembers.map((member, idx) => (
+              <SwiperSlide key={idx} className="team-member-slide">
+                <div className="team-member text-center">
+                  <div className="member-image-wrapper mx-auto mb-4">
+                    <img src={member.image} alt={member.name} className="member-image shadow-sm" />
+                  </div>
+                  <h5 className="member-name fw-bolder mb-1">{member.name}</h5>
+                  <p className="member-role text-muted">{member.role}</p>
                 </div>
-                <h5 className="member-name fw-bolder mb-1">{member.name}</h5>
-                <p className="member-role text-muted">{member.role}</p>
-              </div>
-            </Col>
-          ))}
-        </Row>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="team-pagination d-flex justify-content-center mt-4"></div>
+        </div>
       </Container>
     </section>
   );

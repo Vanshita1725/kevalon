@@ -1,20 +1,20 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import Home from "./components/home/Home";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<WhyChooseUs />} />
-        <Route path="services" element={<Services />} />
-        <Route path="portfolio" element={<Portfolio />} />
-        <Route path="contact" element={<Contact />} />
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="portfolio" element={<PortfolioPage />} />
+        <Route path="contact" element={<ContactPage />} />
       </Route>
     </Routes>
   );

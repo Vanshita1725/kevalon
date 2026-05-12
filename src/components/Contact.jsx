@@ -29,7 +29,7 @@ const Contact = () => {
                   <textarea className="form-control contact-input" rows="6" placeholder="Enter your message..."></textarea>
                 </div>
                 <div className="text-end">
-                  <button type="button" className="btn contact-submit-btn">Send Message</button>
+                  <button type="button" className="btn-primary-custom rounded-pill px-4 py-2 font-semibold">Send Message</button>
                 </div>
               </form>
             </div>
