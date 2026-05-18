@@ -46,7 +46,7 @@ const Portfolio = () => {
 
         <Row className="g-4 ">
           {filteredItems.map((item) => (
-            <Col lg={4} md={6} sm={12} key={item.id}>
+            <Col lg={4} md={6} sm={8} key={item.id}>
               <div className="portfolio-card rounded-4 shadow-sm p-4">
                 <h5 className="mb-2">{item.title}</h5>
                 <p className="mb-0 text-secondary">{item.category}</p>

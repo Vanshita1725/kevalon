@@ -51,6 +51,20 @@ const Services = () => {
             modules={[Pagination, Autoplay]}
             spaceBetween={30}
             slidesPerView={3}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
             loop={true}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true, el: '.custom-pagination' }}

@@ -52,7 +52,7 @@ color: #ffffff !important;
 .portfolio-card {
   background-color: #e6f5f9; /* Light pale blue match */
   border: 1px solid rgba(39, 121, 150, 0.1);
-  width: 325px;
+ 
   height: 233px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
